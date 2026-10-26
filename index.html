@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mochi v1000000 — Your Cute Bunny AI, by Aryan Kumar Shah</title>
+<meta name="description" content="Mochi v1000000: your cute bunny AI. Ask, search, images, study, code, voice, notes — no login, no payment, no key needed for free mode.">
+<link rel="icon" type="image/jpeg" href="mochi.jpg">
+<link rel="apple-touch-icon" href="mochi.jpg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#fdf6ec">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<!-- Mochi v1000000 LOGIN — true reel mixture, original code, no copied code -->
+<!-- Reel 1 style: split card, teal panel + form panel, WELCOME / WELCOME BACK flip -->
+<!-- Reel 2 style: Runaway Log in button — dodges until form is filled, locks when both fields are valid -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card login-split">
+    <div class="login-teal">
+      <img class="login-bunny teddy-idle" src="mochi.jpg" alt="Mochi bunny">
+      <h1 id="tealTitle">WELCOME BACK!</h1>
+      <p id="tealSub">Your cute bunny AI is waiting for you.</p>
+      <p class="small" style="color:#ccfbf1">Login, sign up, or continue as guest — your choice, always.</p>
+    </div>
+    <div class="login-form-side">
+    <h2>Welcome to Mochi 🐰</h2>
+    <div class="login-tabs">
+      <button id="tabLogin" class="tab active">Login</button>
+      <button id="tabSignup" class="tab">Sign Up</button>
+    </div>
+    <form id="loginForm">
+      <input id="loginName" type="text" placeholder="Your name (Sign Up only)" style="display:none" autocomplete="name">
+      <input id="loginEmail" type="email" placeholder="Email address" required autocomplete="email">
+      <div class="pw-row">
+        <input id="loginPass" type="password" placeholder="Password (min 6 letters)" required autocomplete="current-password">
+        <button type="button" id="togglePass">👁️</button>
+      </div>
+      <label class="remember"><input type="checkbox" id="rememberMe" checked> Remember me on this phone</label>
+      <p id="loginError" class="login-error" style="display:none"></p>
+      <button type="submit" id="loginSubmit" class="login-btn runaway">Login →</button>
+      <p class="small" id="runawayHint">Fill both fields and the button locks in place.</p>
+    </form>
+    <button id="googleBtn" class="google-btn">G &nbsp; Continue with Google</button>
+    <button id="guestBtn" class="guest-btn">Continue as Guest — no account needed</button>
+    <button id="forgotBtn" class="link-btn">Forgot password?</button>
+    <div id="forgotPanel" style="display:none">
+      <p class="small">Demo reset, no server, no email sent: enter your email, Mochi will show a reset code on this phone only.</p>
+      <input id="forgotEmail" type="email" placeholder="Email address">
+      <button id="forgotSend" class="login-btn">Send reset code</button>
+      <p id="forgotCode" class="small"></p>
+      <input id="forgotCodeInput" type="text" placeholder="Enter reset code" style="display:none">
+      <input id="forgotNewPass" type="password" placeholder="New password (min 6)" style="display:none">
+      <button id="forgotConfirm" class="login-btn" style="display:none">Reset password</button>
+    </div>
+    <p class="small">Login is local to this phone only. No password or email leaves your phone, nothing is uploaded to GitHub. Guest mode keeps everything from v100000 — no login needed at all.</p>
+    </div>
+  </div>
+</div>
+<main class="app" id="mainApp" style="display:none">
+  <header class="header">
+    <img class="teddy-logo teddy-idle" id="headerTeddy" src="mochi.jpg" alt="Mochi, your cute bunny AI">
+    <div>
+      <h1>Mochi <span class="pink">🧸</span></h1>
+      <p><span class="dot"></span> Your cute bunny AI • v1000000 stable • No login • No payment</p>
+    </div>
+    <span id="profileChip" class="profile-chip">👤 Guest</span>
+    <button id="logoutBtn" title="Logout — return to login screen">Logout</button>
+    <button id="settingsBtn" title="Gemini key settings">⚙️</button>
+    <button id="newChatBtn" title="New chat">＋ New</button>
+    <button id="themeBtn" title="Toggle light/dark">🌙</button>
+    <button id="langBtn" title="Toggle English/Hinglish">EN</button>
+    <button id="exportBtn" title="Download chat">Export</button>
+    <button id="clearBtn" title="Clear chat">Clear</button>
+  </header>
+  <div id="settingsPanel" class="settings" style="display:none">
+    <p><b>Gemini AI key (optional, free)</b> — only for true AI thinking. Key stays only on your phone, never uploaded to GitHub. Leave empty to use search mode.</p>
+    <input id="geminiKeyInput" type="password" placeholder="Paste your free Gemini key here (optional)">
+    <button id="saveKeyBtn">Save key</button>
+    <button id="clearKeyBtn">Remove key</button>
+    <span id="keyStatus"></span>
+    <p class="small">Get a free key: aistudio.google.com → sign in → Get API key. No card needed for free tier.</p>
+  </div>
+  <div class="welcome">
+    <img class="teddy-big teddy-idle" id="welcomeTeddy" src="mochi.jpg" alt="Mochi bunny">
+    <div>
+      <h2>Hi, I'm Mochi! 🧸</h2>
+      <p>Your teddy who searches, shows images, studies with you, runs code, and remembers. Ask anything — I will show you what I am doing, so you never wonder if I am stuck.</p>
+      <p class="small">No login. No payment. No key for free mode. Your chats, notes and key stay only on your phone.</p>
+    </div>
+  </div>
+  <div id="teddyStatus" class="teddy-status" style="display:none">
+    <img id="statusTeddy" src="mochi.jpg" alt="Mochi working">
+    <span id="statusText">Mochi is thinking… 🧸</span>
+  </div>
+
+  <section id="chat" class="chat" aria-live="polite"></section>
+
+  <div class="chips" id="chips">
+    <button>Deep think: why is the sky blue?</button>
+    <button>Show image of Taj Mahal</button>
+    <button>Weather in Kolkata</button>
+    <button>Run Python: print('Hello')</button>
+    <button>Convert 5 km to miles</button>
+    <button>Explain photosynthesis for exam</button>
+  </div>
+  <div class="chips" id="related" style="display:none"></div>
+  <div class="chips" id="followups" style="display:none">
+    <button data-f="more">Tell more ↕</button>
+    <button data-f="simple">Simplify ✨</button>
+    <button data-f="images">Show images 🖼️</button>
+  </div>
+
+  <form id="form" class="composer">
+    <input id="input" type="text" placeholder="Ask Mochi anything, 'deep think: …', or upload a photo 📎" autocomplete="off" required>
+    <button type="button" id="imgBtn" title="Upload a photo for Mochi to see">📎</button>
+    <input type="file" id="imgInput" accept="image/*" style="display:none">
+    <button type="button" id="micBtn" title="Speak">🎤</button>
+    <button type="submit">Send ➤</button>
+  </form>
+  <p class="foot">Mochi v1000000 final — Project #01 of the 100+ AI Projects series • by Aryan Kumar Shah • Free, no API key, nothing else to do — just upload and it works • Gemini AI version would need your own free key, this free version does not</p>
+</main>
+<script src="app.js"></script>
+<script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }</script>
+</body>
+</html>

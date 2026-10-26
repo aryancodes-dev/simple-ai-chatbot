@@ -1,0 +1,84 @@
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#4a3728;background:linear-gradient(180deg,#fdf6ec,#fff8e7 40%,#fef3f2);min-height:100vh}
+.bg{position:fixed;inset:0;background:radial-gradient(500px 260px at 15% 0%,#f9a8d433,transparent),radial-gradient(500px 260px at 90% 100%,#fde68a55,transparent);z-index:-1}
+.app{max-width:760px;margin:0 auto;padding:16px;display:flex;flex-direction:column;min-height:100vh}
+.login-screen{max-width:760px;margin:0 auto;padding:24px 16px;min-height:100vh;display:flex;align-items:center}
+.login-card{background:#ffffffee;border:2px solid #fbcfe8;border-radius:28px;padding:24px;box-shadow:0 12px 32px #ec48991f;text-align:center;width:100%}
+.login-split{display:flex;gap:0;padding:0;overflow:hidden;text-align:left}
+.login-teal{flex:1;background:linear-gradient(160deg,#0f766e,#14b8a6);color:#fff;padding:28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.login-teal h1{margin:12px 0 4px;font-size:26px}
+.login-form-side{flex:1.2;padding:24px}
+.login-form-side h2{margin:0 0 8px;color:#4a3728}
+.runaway{transition:transform 0.25s ease, background 0.25s ease}
+.runaway.locked{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+@media(max-width:600px){.login-split{flex-direction:column}.login-teal{padding:20px}}
+.login-bunny{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #f9a8d4;box-shadow:0 0 0 6px #fff1f2}
+.login-card h1{margin:12px 0 4px;color:#4a3728;font-size:22px}
+.login-sub{color:#9d174d;margin:0 0 12px}
+.login-tabs{display:flex;gap:8px;justify-content:center;margin:12px 0}
+.tab{flex:1;background:#fff1f2;color:#be185d;border:2px solid #fbcfe8;border-radius:999px;padding:10px;font-weight:700;cursor:pointer}
+.tab.active{background:linear-gradient(135deg,#ec4899,#f9a8d4);color:#fff}
+.login-card input[type="text"],.login-card input[type="email"],.login-card input[type="password"]{width:100%;padding:12px;border-radius:14px;border:2px solid #fbcfe8;margin:6px 0;font-size:15px;color:#4a3728}
+.pw-row{display:flex;gap:8px}.pw-row input{flex:1}.pw-row button{background:#fff1f2;border:2px solid #fbcfe8;border-radius:14px;padding:0 12px;cursor:pointer}
+.remember{display:flex;gap:8px;align-items:center;justify-content:flex-start;font-size:13px;color:#6b4f3a;margin:8px 0}
+.login-btn{width:100%;background:linear-gradient(135deg,#ec4899,#f9a8d4);color:#fff;border:0;border-radius:999px;padding:13px;font-weight:700;cursor:pointer;margin:8px 0}
+.google-btn{width:100%;background:#fff;color:#4a3728;border:2px solid #e5e7eb;border-radius:999px;padding:12px;font-weight:700;cursor:pointer;margin:4px 0}
+.guest-btn{width:100%;background:#fff1f2;color:#be185d;border:2px solid #fbcfe8;border-radius:999px;padding:12px;font-weight:700;cursor:pointer;margin:4px 0}
+.link-btn{background:none;border:0;color:#be185d;font-weight:700;cursor:pointer;margin:8px 0}
+.login-error{color:#dc2626;background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:8px;font-size:13px}
+.profile-chip{background:#fff1f2;color:#be185d;border:2px solid #fbcfe8;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:700;white-space:nowrap;max-width:140px;overflow:hidden;text-overflow:ellipsis}
+.header{display:flex;gap:8px;align-items:center;background:#ffffffcc;border:2px solid #fbcfe8;border-radius:24px;padding:12px 16px;box-shadow:0 8px 24px #ec48991a}
+.teddy-logo{width:58px;height:58px;border-radius:50%;border:3px solid #f9a8d4;background:#fff;object-fit:cover;flex-shrink:0}
+.teddy-big{width:96px;height:96px;border-radius:50%;border:4px solid #f9a8d4;background:#fff;object-fit:cover;flex-shrink:0}
+.welcome{display:flex;gap:14px;align-items:center;background:#ffffffcc;border:2px solid #fbcfe8;border-radius:24px;padding:14px;margin-top:12px}
+.welcome h2{margin:0;color:#be185d}.welcome p{margin:6px 0;color:#6b4f3a}
+.header h1{margin:0;font-size:22px;color:#4a3728}.header p{margin:4px 0 0;color:#9d174d;font-size:13px}
+.pink{color:#ec4899}
+.dot{display:inline-block;width:8px;height:8px;background:#22c55e;border-radius:50%;margin-right:4px}
+.header button{background:#fff1f2;color:#be185d;border:2px solid #fbcfe8;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:700}
+.settings{background:#ffffffdd;border:2px solid #fbcfe8;border-radius:20px;padding:14px;margin-top:10px;color:#4a3728}
+.settings input{width:100%;padding:10px;border-radius:12px;border:2px solid #fbcfe8;margin:8px 0}
+.settings button{background:#ec4899;color:#fff;border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;margin-right:6px}
+.small{font-size:12px;color:#9d174d}
+.teddy-status{display:flex;gap:10px;align-items:center;justify-content:center;background:#ffffffcc;border:2px solid #fbcfe8;border-radius:999px;padding:8px 16px;margin-top:10px;font-weight:700;color:#be185d}
+.teddy-status img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #f9a8d4}
+/* Mochi v1000 animations: each action has its OWN animation, never the same one */
+/* IDLE / READING (when you are reading, nothing happening): breathe + blink + ear wiggle + sparkle glow */
+.teddy-idle,.teddy-reading{animation:mochi-breathe 3.5s ease-in-out infinite, mochi-blink 4.2s infinite, mochi-wiggle 6s ease-in-out infinite}
+/* THINKING: slow tilt side-to-side, like thinking hard — different from searching */
+.teddy-thinking{animation:mochi-think 1.6s ease-in-out infinite, mochi-blink 4.2s infinite}
+/* SEARCHING: fast bounce + look left-right, like hunting for an answer */
+.teddy-searching{animation:mochi-bounce 0.9s infinite, mochi-look 2.2s ease-in-out infinite}
+/* GENERATING IMAGE: sparkle scale + glow, different from searching */
+.teddy-generating{animation:mochi-sparkle 1.1s infinite, mochi-blink 4.2s infinite}
+/* BROWSING: slow look left-right only, like reading a page */
+.teddy-browsing{animation:mochi-look 2.2s ease-in-out infinite, mochi-breathe 3.5s ease-in-out infinite}
+/* SPEAKING: small talk bob */
+.teddy-speaking{animation:mochi-talk 0.7s infinite, mochi-blink 4.2s infinite}
+.teddy-happy{animation:mochi-jump 0.8s ease 2}
+.teddy-sad{transform:rotate(-8deg);filter:grayscale(0.4)}
+@keyframes mochi-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes mochi-blink{0%,92%,100%{transform:scaleY(1)}94%,96%{transform:scaleY(0.88)}}
+@keyframes mochi-wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
+@keyframes mochi-think{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(6deg) translateY(-3px)}}
+@keyframes mochi-bounce{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+@keyframes mochi-look{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes mochi-sparkle{0%,100%{transform:scale(1) rotate(0deg);filter:brightness(1)}50%{transform:scale(1.08) rotate(4deg);filter:brightness(1.15) saturate(1.2)}}
+@keyframes mochi-talk{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes mochi-jump{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.chat{flex:1;display:flex;flex-direction:column;gap:10px;padding:18px 4px;overflow-y:auto}
+.msg{max-width:85%;padding:12px 14px;border-radius:22px;line-height:1.5;font-size:15px;white-space:pre-wrap;box-shadow:0 4px 14px #ec48991a}
+.msg.bot{background:#ffffff;border:2px solid #fbcfe8;border-bottom-left-radius:8px;align-self:flex-start;color:#4a3728}
+.msg.user{background:linear-gradient(135deg,#ec4899,#f9a8d4);border-bottom-right-radius:8px;align-self:flex-end;color:#fff}
+.msg.typing{color:#9d174d}
+.chat-img{width:100%;border-radius:16px;margin-top:10px;display:block;border:2px solid #fbcfe8}
+.msg-actions{display:flex;gap:6px;margin-top:8px}
+.msg-actions button{background:#fff1f2;color:#be185d;border:1px solid #fbcfe8;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 0}
+.chips button{background:#ffffffcc;color:#be185d;border:2px solid #fbcfe8;border-radius:999px;padding:8px 12px;cursor:pointer;font-size:13px;font-weight:600}
+.composer{display:flex;gap:10px;background:#ffffff;border:2px solid #fbcfe8;border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 8px 24px #ec48991a}
+.composer input{flex:1;background:transparent;border:0;outline:0;color:#4a3728;font-size:16px;min-width:0}
+.composer input::placeholder{color:#f9a8d4}
+.composer button{background:linear-gradient(135deg,#ec4899,#f9a8d4);color:#fff;border:0;border-radius:999px;padding:12px 16px;font-weight:700;cursor:pointer}
+#micBtn{background:#fff1f2;color:#be185d}
+.foot{text-align:center;color:#9d174d;font-size:12px;line-height:1.5}
+@media(max-width:520px){.header p{font-size:12px}.msg{max-width:92%}.teddy-big{width:72px;height:72px}}
