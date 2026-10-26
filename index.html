@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple AI Chatbot — by Aryan Kumar Shah</title>
+<meta name="description" content="A simple, offline AI chatbot that understands greetings, questions about programming, motivation, jokes and more. No API key needed.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6d28d9">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<main class="app">
+  <header class="header">
+    <div class="logo">💬</div>
+    <div>
+      <h1>Simple AI Chatbot</h1>
+      <p><span class="dot"></span> Online • Replies instantly • No login, no API key</p>
+    </div>
+    <button id="clearBtn" title="Clear chat">Clear</button>
+  </header>
+
+  <section id="chat" class="chat" aria-live="polite"></section>
+
+  <div class="chips" id="chips">
+    <button>Who are you?</button>
+    <button>Give me a Python tip</button>
+    <button>Tell me a joke</button>
+    <button>Motivate me</button>
+    <button>What can you do?</button>
+  </div>
+
+  <form id="form" class="composer">
+    <input id="input" type="text" placeholder="Type a message… try 'hello', 'python', 'joke'" autocomplete="off" required>
+    <button type="submit">Send ➤</button>
+  </form>
+  <p class="foot">Project #01 of the 100+ AI Projects series • by Aryan Kumar Shah • Works offline, install it as an app from your browser menu</p>
+</main>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>
